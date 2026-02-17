@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PagePick</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>PagePick</h1>
+    </div>
+    
+    <div class="menu">
+      <button class="menu-item" data-action="url-text">
+        <span class="icon">📝</span>
+        <span class="label">URL+タイトル(改行区切り)</span>
+      </button>
+      
+      <button class="menu-item" data-action="url-markdown">
+        <span class="icon">✏️</span>
+        <span class="label">URL+タイトル(Markdown)</span>
+      </button>
+
+      <button class="menu-item" data-action="url-tsv">
+        <span class="icon">📋</span>
+        <span class="label">URL+タイトル(TSV)</span>
+      </button>
+
+      <button class="menu-item" data-action="ogp-image">
+        <span class="icon">🖼️</span>
+        <span class="label">OGP画像を開く</span>
+      </button>
+
+      <button class="menu-item" data-action="google-docs">
+        <span class="icon">📄</span>
+        <span class="label">Google Docs変換</span>
+      </button>
+      
+    </div>
+    
+    <div id="message" class="message"></div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
