@@ -9,15 +9,16 @@ Google ドキュメント、スプレッドシート、スライドの編集画�
 - 強制コピーモード（`/copy`）
 - PDFでダウンロード（`/export?format=pdf`）
 - Excelでダウンロード（`/export?format=xlsx`）※スプレッドシートのみ
+- CSVでダウンロード（`/export?format=csv`）※スプレッドシートのみ
 
 ### 2. OGP画像を開く
 現在のページのOGP画像（`og:image`メタタグ）を新しいタブで開きます。
 
 ### 3. URL+タイトル（複数形式対応）
 現在のページのタイトルとURLを、複数の形式でコピーできます：
-- **TSV形式**：`タイトル[TAB]URL`
-- **テキスト形式**：`タイトル[改行]URL`
+- **改行区切り形式**：`タイトル[改行]URL`
 - **Markdown形式**：`[タイトル](URL)`
+- **TSV形式**：`タイトル[TAB]URL`
 
 全形式で以下の処理を自動実行：
 - トラッキングパラメータ（utm_* など）の自動削除
@@ -55,7 +56,7 @@ chrome-extension/
 ├── manifest.json       # 拡張機能の設定ファイル
 ├── popup.html         # ポップアップUI
 ├── popup.css          # ポップアップスタイル
-├── popup.js           # ポップアップスクリプト
+├── main.js           # ポップアップスクリプト
 ├── README.md          # このファイル
 └── icons/             # アイコン（現在は空です）
 ```
@@ -65,8 +66,6 @@ chrome-extension/
 この拡張機能は以下の権限を使用します：
 
 - **activeTab**: 現在のタブ情報を取得
-- **scripting**: ページ内でスクリプトを実行（OGP画像取得用）
-- **clipboardWrite**: クリップボードへのコピー
 - **host_permissions**: すべてのサイトにアクセス可能
 
 ## トラッキングパラメータの削除対象
