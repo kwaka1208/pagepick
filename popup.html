@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PagePick</title>
   <link rel="stylesheet" href="popup.css">
 </head>
+
 <body>
   <div class="container">
     <div class="header">
       <h1>PagePick</h1>
     </div>
-    
-    <div class="menu">
+
+    <div id="main-menu" class="menu">
       <button class="menu-item" data-action="url-text">
         <span class="icon">📝</span>
         <span class="label">URL+タイトル(改行区切り)</span>
       </button>
-      
+
       <button class="menu-item" data-action="url-markdown">
         <span class="icon">✏️</span>
         <span class="label">URL+タイトル(Markdown)</span>
@@ -30,19 +32,32 @@
 
       <button class="menu-item" data-action="ogp-image">
         <span class="icon">🖼️</span>
-        <span class="label">OGP画像を開く</span>
+        <span class="label">OGP画像のURL</span>
       </button>
 
       <button class="menu-item" data-action="google-docs">
         <span class="icon">📄</span>
         <span class="label">Google Docs変換</span>
       </button>
-      
     </div>
-    
+
+    <div id="gd-menu" class="menu" style="display: none;">
+      <div class="menu-header">
+        <span>Google Docs ツール</span>
+        <span id="gd-back-btn" class="close-btn">×</span>
+      </div>
+      <button class="menu-item" data-action="gd-copy"><span class="label">1. 強制コピーURL</span></button>
+      <button class="menu-item" data-action="gd-pdf"><span class="label">2. PDFダウンロードURL</span></button>
+      <button class="menu-item" data-action="gd-excel" style="display: none;"><span class="label">3.
+          Excelダウンロード用URL</span></button>
+      <button class="menu-item" data-action="gd-csv" style="display: none;"><span class="label">4.
+          CSVダウンロード用URL</span></button>
+    </div>
+
     <div id="message" class="message"></div>
   </div>
-  
-  <script src="popup.js"></script>
+
+  <script src="main.js"></script>
 </body>
+
 </html>

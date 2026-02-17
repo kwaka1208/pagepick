@@ -43,7 +43,8 @@ body {
   border: 1px solid #ddd;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 13px;
+  width: 100%;
+  text-align: left;
   transition: all 0.2s ease;
 }
 
@@ -96,8 +97,31 @@ body {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.menu-header {
+  padding: 8px 4px;
+  font-weight: 600;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.close-btn {
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 18px;
+  color: #666;
+}
+
+.close-btn:hover {
+  color: #333;
 }
